@@ -1,0 +1,68 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://enemy/boss.gd" id="1_boss"]
+[ext_resource type="Texture2D" path="res://player/hivelord.jpg" id="2_hivelord"]
+[ext_resource type="Shader" path="res://enemy/boss_sprite_key.gdshader" id="3_key"]
+[ext_resource type="Script" path="res://enemy/health_component.gd" id="4_health"]
+[ext_resource type="PackedScene" path="res://enemy/enemy_bullet.tscn" id="5_missile"]
+[ext_resource type="PackedScene" path="res://enemy/spider_minion.tscn" id="6_spider"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_key"]
+shader = ExtResource("3_key")
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_body"]
+radius = 72.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hurtbox"]
+radius = 88.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_laser"]
+size = Vector2(1000, 24)
+
+[node name="Boss" type="CharacterBody2D" groups=["enemy"]]
+collision_layer = 2
+collision_mask = 1
+script = ExtResource("1_boss")
+missile_scene = ExtResource("5_missile")
+spider_scene = ExtResource("6_spider")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_key")
+position = Vector2(0, -8)
+scale = Vector2(0.55, 0.55)
+texture = ExtResource("2_hivelord")
+region_enabled = true
+region_rect = Rect2(0, 0, 512, 512)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_body")
+
+[node name="Hurtbox" type="Area2D" parent="." groups=["enemy_hurtbox"]]
+collision_layer = 2
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
+shape = SubResource("CircleShape2D_hurtbox")
+
+[node name="HealthComponent" type="Node" parent="."]
+script = ExtResource("4_health")
+max_health = 500
+
+[node name="AttackTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="LaserPivot" type="Node2D" parent="."]
+visible = false
+
+[node name="LaserLine" type="Line2D" parent="LaserPivot"]
+points = PackedVector2Array(0, 0, 1000, 0)
+width = 12.0
+default_color = Color(0.1, 1, 1, 0.9)
+
+[node name="LaserHitbox" type="Area2D" parent="LaserPivot"]
+collision_layer = 0
+collision_mask = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LaserPivot/LaserHitbox"]
+position = Vector2(500, 0)
+shape = SubResource("RectangleShape2D_laser")

@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://dw16lha1k63nc"]
+
+[ext_resource type="Script" uid="uid://c0mpohdryxlvm" path="res://player/core_fragment.gd" id="1_fragment"]
+[ext_resource type="Texture2D" uid="uid://dbq10vhbsoe1t" path="res://player/01.png" id="2_3takh"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fragment"]
+radius = 14.0
+
+[node name="CoreFragment" type="Area2D" unique_id=9107583]
+collision_layer = 0
+script = ExtResource("1_fragment")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=513473984]
+modulate = Color(0.1, 1, 0.9, 1)
+texture = ExtResource("2_3takh")
+region_enabled = true
+region_rect = Rect2(15, 22.5, 51, 42)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=27237421]
+shape = SubResource("CircleShape2D_fragment")

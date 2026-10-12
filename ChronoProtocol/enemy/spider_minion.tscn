@@ -1,0 +1,404 @@
+[gd_scene format=3 uid="uid://qc6tqqo1l2dg"]
+
+[ext_resource type="Script" uid="uid://ddxho773qub6a" path="res://enemy/spider_minion.gd" id="1_minion"]
+[ext_resource type="Texture2D" uid="uid://k5smf1ell20b" path="res://enemy/Spider.png" id="2_spider"]
+[ext_resource type="Script" uid="uid://dcdgo6gybf0vd" path="res://enemy/health_component.gd" id="3_health"]
+[ext_resource type="Script" uid="uid://ufwpcgwntg3v" path="res://player/hit_flash_component.gd" id="4_hit_flash"]
+[ext_resource type="PackedScene" uid="uid://dw16lha1k63nc" path="res://player/core_fragment.tscn" id="5_fragment"]
+
+[sub_resource type="AtlasTexture" id="Attack1"]
+atlas = ExtResource("2_spider")
+region = Rect2(0, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="Attack2"]
+atlas = ExtResource("2_spider")
+region = Rect2(96, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="Attack3"]
+atlas = ExtResource("2_spider")
+region = Rect2(192, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="Attack4"]
+atlas = ExtResource("2_spider")
+region = Rect2(288, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="Attack5"]
+atlas = ExtResource("2_spider")
+region = Rect2(384, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="Attack6"]
+atlas = ExtResource("2_spider")
+region = Rect2(480, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="Attack7"]
+atlas = ExtResource("2_spider")
+region = Rect2(576, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="Attack8"]
+atlas = ExtResource("2_spider")
+region = Rect2(672, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="Attack9"]
+atlas = ExtResource("2_spider")
+region = Rect2(768, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="Attack10"]
+atlas = ExtResource("2_spider")
+region = Rect2(864, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="Attack11"]
+atlas = ExtResource("2_spider")
+region = Rect2(960, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="Death1"]
+atlas = ExtResource("2_spider")
+region = Rect2(0, 96, 96, 96)
+
+[sub_resource type="AtlasTexture" id="Death2"]
+atlas = ExtResource("2_spider")
+region = Rect2(96, 96, 96, 96)
+
+[sub_resource type="AtlasTexture" id="Death3"]
+atlas = ExtResource("2_spider")
+region = Rect2(192, 96, 96, 96)
+
+[sub_resource type="AtlasTexture" id="Death4"]
+atlas = ExtResource("2_spider")
+region = Rect2(288, 96, 96, 96)
+
+[sub_resource type="AtlasTexture" id="Death5"]
+atlas = ExtResource("2_spider")
+region = Rect2(384, 96, 96, 96)
+
+[sub_resource type="AtlasTexture" id="Death6"]
+atlas = ExtResource("2_spider")
+region = Rect2(480, 96, 96, 96)
+
+[sub_resource type="AtlasTexture" id="Death7"]
+atlas = ExtResource("2_spider")
+region = Rect2(576, 96, 96, 96)
+
+[sub_resource type="AtlasTexture" id="Death8"]
+atlas = ExtResource("2_spider")
+region = Rect2(672, 96, 96, 96)
+
+[sub_resource type="AtlasTexture" id="Death9"]
+atlas = ExtResource("2_spider")
+region = Rect2(768, 96, 96, 96)
+
+[sub_resource type="AtlasTexture" id="Dodge1"]
+atlas = ExtResource("2_spider")
+region = Rect2(0, 480, 96, 96)
+
+[sub_resource type="AtlasTexture" id="Dodge2"]
+atlas = ExtResource("2_spider")
+region = Rect2(96, 480, 96, 96)
+
+[sub_resource type="AtlasTexture" id="Dodge3"]
+atlas = ExtResource("2_spider")
+region = Rect2(192, 480, 96, 96)
+
+[sub_resource type="AtlasTexture" id="Dodge4"]
+atlas = ExtResource("2_spider")
+region = Rect2(288, 480, 96, 96)
+
+[sub_resource type="AtlasTexture" id="Hurt1"]
+atlas = ExtResource("2_spider")
+region = Rect2(0, 192, 96, 96)
+
+[sub_resource type="AtlasTexture" id="Hurt2"]
+atlas = ExtResource("2_spider")
+region = Rect2(96, 192, 96, 96)
+
+[sub_resource type="AtlasTexture" id="Hurt3"]
+atlas = ExtResource("2_spider")
+region = Rect2(192, 192, 96, 96)
+
+[sub_resource type="AtlasTexture" id="Hurt4"]
+atlas = ExtResource("2_spider")
+region = Rect2(288, 192, 96, 96)
+
+[sub_resource type="AtlasTexture" id="Hurt5"]
+atlas = ExtResource("2_spider")
+region = Rect2(384, 192, 96, 96)
+
+[sub_resource type="AtlasTexture" id="Hurt6"]
+atlas = ExtResource("2_spider")
+region = Rect2(480, 192, 96, 96)
+
+[sub_resource type="AtlasTexture" id="Hurt7"]
+atlas = ExtResource("2_spider")
+region = Rect2(576, 192, 96, 96)
+
+[sub_resource type="AtlasTexture" id="Hurt8"]
+atlas = ExtResource("2_spider")
+region = Rect2(672, 192, 96, 96)
+
+[sub_resource type="AtlasTexture" id="Idle1"]
+atlas = ExtResource("2_spider")
+region = Rect2(0, 384, 96, 96)
+
+[sub_resource type="AtlasTexture" id="Idle2"]
+atlas = ExtResource("2_spider")
+region = Rect2(96, 384, 96, 96)
+
+[sub_resource type="AtlasTexture" id="Idle3"]
+atlas = ExtResource("2_spider")
+region = Rect2(192, 384, 96, 96)
+
+[sub_resource type="AtlasTexture" id="Idle4"]
+atlas = ExtResource("2_spider")
+region = Rect2(288, 384, 96, 96)
+
+[sub_resource type="AtlasTexture" id="Walk1"]
+atlas = ExtResource("2_spider")
+region = Rect2(0, 288, 96, 96)
+
+[sub_resource type="AtlasTexture" id="Walk2"]
+atlas = ExtResource("2_spider")
+region = Rect2(96, 288, 96, 96)
+
+[sub_resource type="AtlasTexture" id="Walk3"]
+atlas = ExtResource("2_spider")
+region = Rect2(192, 288, 96, 96)
+
+[sub_resource type="AtlasTexture" id="Walk4"]
+atlas = ExtResource("2_spider")
+region = Rect2(288, 288, 96, 96)
+
+[sub_resource type="AtlasTexture" id="Walk5"]
+atlas = ExtResource("2_spider")
+region = Rect2(384, 288, 96, 96)
+
+[sub_resource type="AtlasTexture" id="Walk6"]
+atlas = ExtResource("2_spider")
+region = Rect2(480, 288, 96, 96)
+
+[sub_resource type="AtlasTexture" id="Walk7"]
+atlas = ExtResource("2_spider")
+region = Rect2(576, 288, 96, 96)
+
+[sub_resource type="AtlasTexture" id="Walk8"]
+atlas = ExtResource("2_spider")
+region = Rect2(672, 288, 96, 96)
+
+[sub_resource type="AtlasTexture" id="Walk9"]
+atlas = ExtResource("2_spider")
+region = Rect2(768, 288, 96, 96)
+
+[sub_resource type="AtlasTexture" id="Walk10"]
+atlas = ExtResource("2_spider")
+region = Rect2(864, 288, 96, 96)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_minion"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("Attack1")
+}, {
+"duration": 1.0,
+"texture": SubResource("Attack2")
+}, {
+"duration": 1.0,
+"texture": SubResource("Attack3")
+}, {
+"duration": 1.0,
+"texture": SubResource("Attack4")
+}, {
+"duration": 1.0,
+"texture": SubResource("Attack5")
+}, {
+"duration": 1.0,
+"texture": SubResource("Attack6")
+}, {
+"duration": 1.0,
+"texture": SubResource("Attack7")
+}, {
+"duration": 1.0,
+"texture": SubResource("Attack8")
+}, {
+"duration": 1.0,
+"texture": SubResource("Attack9")
+}, {
+"duration": 1.0,
+"texture": SubResource("Attack10")
+}, {
+"duration": 1.0,
+"texture": SubResource("Attack11")
+}],
+"loop": 0,
+"name": &"Attack",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("Death1")
+}, {
+"duration": 1.0,
+"texture": SubResource("Death2")
+}, {
+"duration": 1.0,
+"texture": SubResource("Death3")
+}, {
+"duration": 1.0,
+"texture": SubResource("Death4")
+}, {
+"duration": 1.0,
+"texture": SubResource("Death5")
+}, {
+"duration": 1.0,
+"texture": SubResource("Death6")
+}, {
+"duration": 1.0,
+"texture": SubResource("Death7")
+}, {
+"duration": 1.0,
+"texture": SubResource("Death8")
+}, {
+"duration": 1.0,
+"texture": SubResource("Death9")
+}],
+"loop": 0,
+"name": &"Death",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("Dodge1")
+}, {
+"duration": 1.0,
+"texture": SubResource("Dodge2")
+}, {
+"duration": 1.0,
+"texture": SubResource("Dodge3")
+}, {
+"duration": 1.0,
+"texture": SubResource("Dodge4")
+}],
+"loop": 0,
+"name": &"Dodge",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("Hurt1")
+}, {
+"duration": 1.0,
+"texture": SubResource("Hurt2")
+}, {
+"duration": 1.0,
+"texture": SubResource("Hurt3")
+}, {
+"duration": 1.0,
+"texture": SubResource("Hurt4")
+}, {
+"duration": 1.0,
+"texture": SubResource("Hurt5")
+}, {
+"duration": 1.0,
+"texture": SubResource("Hurt6")
+}, {
+"duration": 1.0,
+"texture": SubResource("Hurt7")
+}, {
+"duration": 1.0,
+"texture": SubResource("Hurt8")
+}],
+"loop": 0,
+"name": &"Hurt",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("Idle1")
+}, {
+"duration": 1.0,
+"texture": SubResource("Idle2")
+}, {
+"duration": 1.0,
+"texture": SubResource("Idle3")
+}, {
+"duration": 1.0,
+"texture": SubResource("Idle4")
+}],
+"loop": 1,
+"name": &"Idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("Walk1")
+}, {
+"duration": 1.0,
+"texture": SubResource("Walk2")
+}, {
+"duration": 1.0,
+"texture": SubResource("Walk3")
+}, {
+"duration": 1.0,
+"texture": SubResource("Walk4")
+}, {
+"duration": 1.0,
+"texture": SubResource("Walk5")
+}, {
+"duration": 1.0,
+"texture": SubResource("Walk6")
+}, {
+"duration": 1.0,
+"texture": SubResource("Walk7")
+}, {
+"duration": 1.0,
+"texture": SubResource("Walk8")
+}, {
+"duration": 1.0,
+"texture": SubResource("Walk9")
+}, {
+"duration": 1.0,
+"texture": SubResource("Walk10")
+}],
+"loop": 1,
+"name": &"Walk",
+"speed": 12.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_body"]
+radius = 30.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_attack"]
+radius = 38.0
+
+[node name="SpiderMinion" type="CharacterBody2D" unique_id=782366633 groups=["enemy"]]
+collision_layer = 2
+script = ExtResource("1_minion")
+fragment_scene = ExtResource("5_fragment")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1740437422]
+scale = Vector2(2.5, 2.5)
+sprite_frames = SubResource("SpriteFrames_minion")
+animation = &"Idle"
+autoplay = "Idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=865357686]
+shape = SubResource("CircleShape2D_body")
+
+[node name="Hurtbox" type="Area2D" parent="." unique_id=1231777535 groups=["enemy_hurtbox"]]
+collision_layer = 2
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox" unique_id=719572594]
+shape = SubResource("CircleShape2D_body")
+
+[node name="AttackArea" type="Area2D" parent="." unique_id=919150227]
+position = Vector2(42, 0)
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea" unique_id=1339588725]
+shape = SubResource("CircleShape2D_attack")
+
+[node name="HealthComponent" type="Node" parent="." unique_id=813741879]
+script = ExtResource("3_health")
+max_health = 1
+
+[node name="HitFlashComponent" type="Node" parent="." unique_id=2043158525]
+script = ExtResource("4_hit_flash")
+flash_duration = 0.1
